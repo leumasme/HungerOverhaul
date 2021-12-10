@@ -1,10 +1,10 @@
 [
 {
-  "modid": "HungerOverhaul",
-  "name": "Hunger Overhaul",
+  "modid": "${modId}",
+  "name": "${modName}",
   "description": "Hunger mechanics overhauled",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "version": "${modVersion}",
+  "mcversion": "${minecraftVersion}",
   "url": "http://www.minecraftforum.net/topic/1813158-",
   "authorList": ["iguana_man", "Parker8283" ,"progwml6", "squeek502"],
   "credits": "Created by iguana_man, updated to 1.7 and maintained by Parker8283, progwml6, and squeek502",
