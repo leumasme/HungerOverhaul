@@ -2,13 +2,21 @@
 
 repositories {
     maven {
-        name = "sponge"
-        url = "https://repo.spongepowered.org/repository/maven-public"
+        name 'GTNH Maven'
+        url 'http://jenkins.usrv.eu:8081/nexus/content/groups/public/'
+        allowInsecureProtocol
     }
     maven {
-        url "https://cursemaven.com"
+        name 'sponge'
+        url 'https://repo.spongepowered.org/repository/maven-public'
     }
     maven {
-        url = "https://jitpack.io"
+        url 'https://cursemaven.com'
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        url 'https://jitpack.io'
     }
 }
