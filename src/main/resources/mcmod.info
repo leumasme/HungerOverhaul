@@ -1,5 +1,4 @@
-[
-{
+[{
   "modid": "${modId}",
   "name": "${modName}",
   "description": "Hunger mechanics overhauled",
@@ -11,5 +10,4 @@
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
-}
-]
+}]
