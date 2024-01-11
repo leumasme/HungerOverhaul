@@ -1,17 +1,16 @@
 package iguanaman.hungeroverhaul.module;
 
 import net.minecraft.item.ItemStack;
+
 import biomesoplenty.api.content.BOPCItems;
 import iguanaman.hungeroverhaul.config.IguanaConfig;
 import iguanaman.hungeroverhaul.food.FoodModifier;
 import squeek.applecore.api.food.FoodValues;
 
-public class ModuleBOP
-{
-    public static void init()
-    {
-        if (IguanaConfig.modifyFoodValues && IguanaConfig.useHOFoodValues)
-        {
+public class ModuleBOP {
+
+    public static void init() {
+        if (IguanaConfig.modifyFoodValues && IguanaConfig.useHOFoodValues) {
             FoodModifier.setModifiedFoodValues(new ItemStack(BOPCItems.food, 1, 0), new FoodValues(1, 0.05F));
             FoodModifier.setModifiedFoodValues(new ItemStack(BOPCItems.food, 1, 1), new FoodValues(1, 0.05F));
             FoodModifier.setModifiedFoodValues(new ItemStack(BOPCItems.food, 1, 2), new FoodValues(1, 0.05F));

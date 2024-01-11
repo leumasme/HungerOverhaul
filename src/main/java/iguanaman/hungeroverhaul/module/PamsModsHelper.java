@@ -3,8 +3,6 @@ package iguanaman.hungeroverhaul.module;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-import com.google.common.collect.Maps;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+import com.google.common.collect.Maps;
 import com.pam.harvestcraft.BlockRegistry;
 import com.pam.harvestcraft.ItemPamSeedFood;
 import com.pam.harvestcraft.ItemRegistry;
@@ -20,8 +19,8 @@ import com.pam.weeeflowers.weeeflowers;
 
 import cpw.mods.fml.common.Loader;
 
-public class PamsModsHelper
-{
+public class PamsModsHelper {
+
     public static Block[] PamCrops;
     public static Block[] PamFlowerCrops;
     public static Item[] PamFlowerSeeds;
@@ -32,23 +31,28 @@ public class PamsModsHelper
     public static HashMap<Block, Block> saplingToFruitBlockMap = new HashMap<Block, Block>();
     public static HashMap<Item, Item> productToSeedMap = new HashMap<Item, Item>();
 
-    public static void loadHC()
-    {
-        if (Loader.isModLoaded("harvestcraft"))
-        {
-            PamCrops = new Block[]{
-            BlockRegistry.pamblackberryCrop, BlockRegistry.pamblueberryCrop, BlockRegistry.pamcandleberryCrop, BlockRegistry.pamraspberryCrop, BlockRegistry.pamstrawberryCrop,
-            BlockRegistry.pamcactusfruitCrop, BlockRegistry.pamasparagusCrop, BlockRegistry.pambarleyCrop, BlockRegistry.pamoatsCrop, BlockRegistry.pamryeCrop,
-            BlockRegistry.pamcornCrop, BlockRegistry.pambambooshootCrop, BlockRegistry.pamcantaloupeCrop, BlockRegistry.pamcucumberCrop, BlockRegistry.pamwintersquashCrop,
-            BlockRegistry.pamzucchiniCrop, BlockRegistry.pambeetCrop, BlockRegistry.pamonionCrop, BlockRegistry.pamparsnipCrop, BlockRegistry.pampeanutCrop,
-            BlockRegistry.pamradishCrop, BlockRegistry.pamrutabagaCrop, BlockRegistry.pamsweetpotatoCrop, BlockRegistry.pamturnipCrop, BlockRegistry.pamrhubarbCrop,
-            BlockRegistry.pamceleryCrop, BlockRegistry.pamgarlicCrop, BlockRegistry.pamgingerCrop, BlockRegistry.pamspiceleafCrop, BlockRegistry.pamtealeafCrop,
-            BlockRegistry.pamcoffeebeanCrop, BlockRegistry.pammustardseedsCrop, BlockRegistry.pambroccoliCrop, BlockRegistry.pamcauliflowerCrop, BlockRegistry.pamleekCrop,
-            BlockRegistry.pamlettuceCrop, BlockRegistry.pamscallionCrop, BlockRegistry.pamartichokeCrop, BlockRegistry.pambrusselsproutCrop, BlockRegistry.pamcabbageCrop,
-            BlockRegistry.pamwhitemushroomCrop, BlockRegistry.pambeanCrop, BlockRegistry.pamsoybeanCrop, BlockRegistry.pambellpepperCrop, BlockRegistry.pamchilipepperCrop,
-            BlockRegistry.pameggplantCrop, BlockRegistry.pamokraCrop, BlockRegistry.pampeasCrop, BlockRegistry.pamtomatoCrop, BlockRegistry.pamcottonCrop,
-            BlockRegistry.pampineappleCrop, BlockRegistry.pamgrapeCrop, BlockRegistry.pamkiwiCrop, BlockRegistry.pamcranberryCrop, BlockRegistry.pamriceCrop, BlockRegistry.pamseaweedCrop
-            };
+    public static void loadHC() {
+        if (Loader.isModLoaded("harvestcraft")) {
+            PamCrops = new Block[] { BlockRegistry.pamblackberryCrop, BlockRegistry.pamblueberryCrop,
+                    BlockRegistry.pamcandleberryCrop, BlockRegistry.pamraspberryCrop, BlockRegistry.pamstrawberryCrop,
+                    BlockRegistry.pamcactusfruitCrop, BlockRegistry.pamasparagusCrop, BlockRegistry.pambarleyCrop,
+                    BlockRegistry.pamoatsCrop, BlockRegistry.pamryeCrop, BlockRegistry.pamcornCrop,
+                    BlockRegistry.pambambooshootCrop, BlockRegistry.pamcantaloupeCrop, BlockRegistry.pamcucumberCrop,
+                    BlockRegistry.pamwintersquashCrop, BlockRegistry.pamzucchiniCrop, BlockRegistry.pambeetCrop,
+                    BlockRegistry.pamonionCrop, BlockRegistry.pamparsnipCrop, BlockRegistry.pampeanutCrop,
+                    BlockRegistry.pamradishCrop, BlockRegistry.pamrutabagaCrop, BlockRegistry.pamsweetpotatoCrop,
+                    BlockRegistry.pamturnipCrop, BlockRegistry.pamrhubarbCrop, BlockRegistry.pamceleryCrop,
+                    BlockRegistry.pamgarlicCrop, BlockRegistry.pamgingerCrop, BlockRegistry.pamspiceleafCrop,
+                    BlockRegistry.pamtealeafCrop, BlockRegistry.pamcoffeebeanCrop, BlockRegistry.pammustardseedsCrop,
+                    BlockRegistry.pambroccoliCrop, BlockRegistry.pamcauliflowerCrop, BlockRegistry.pamleekCrop,
+                    BlockRegistry.pamlettuceCrop, BlockRegistry.pamscallionCrop, BlockRegistry.pamartichokeCrop,
+                    BlockRegistry.pambrusselsproutCrop, BlockRegistry.pamcabbageCrop,
+                    BlockRegistry.pamwhitemushroomCrop, BlockRegistry.pambeanCrop, BlockRegistry.pamsoybeanCrop,
+                    BlockRegistry.pambellpepperCrop, BlockRegistry.pamchilipepperCrop, BlockRegistry.pameggplantCrop,
+                    BlockRegistry.pamokraCrop, BlockRegistry.pampeasCrop, BlockRegistry.pamtomatoCrop,
+                    BlockRegistry.pamcottonCrop, BlockRegistry.pampineappleCrop, BlockRegistry.pamgrapeCrop,
+                    BlockRegistry.pamkiwiCrop, BlockRegistry.pamcranberryCrop, BlockRegistry.pamriceCrop,
+                    BlockRegistry.pamseaweedCrop };
 
             crops.put(BlockRegistry.pamasparagusCrop, 0);
             crops.put(BlockRegistry.pambarleyCrop, 1);
@@ -143,71 +147,63 @@ public class PamsModsHelper
             mapFruit(BlockRegistry.pamvanillabeanSapling, ItemRegistry.vanillabeanItem, BlockRegistry.pamVanillabean);
             mapFruit(BlockRegistry.pamwalnutSapling, ItemRegistry.walnutItem, BlockRegistry.pamWalnut);
 
-            for (int i=0; i < ItemRegistry.PamSeeds.length && i < ItemRegistry.PamCropItems.length; i++)
-            {
+            for (int i = 0; i < ItemRegistry.PamSeeds.length && i < ItemRegistry.PamCropItems.length; i++) {
                 Item seed = ItemRegistry.PamSeeds[i];
                 Item product = ItemRegistry.PamCropItems[i];
                 productToSeedMap.put(product, seed);
             }
 
-            try
-            {
+            try {
                 itemPamSeedFoodSoilBlock = ItemPamSeedFood.class.getDeclaredField("soilId");
                 itemPamSeedFoodSoilBlock.setAccessible(true);
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public static void loadWF()
-    {
-        if (Loader.isModLoaded("weeeflowers"))
-        {
-            PamFlowerCrops = new Block[]{
-            weeeflowers.pamwhiteflowerCrop, weeeflowers.pamorangeflowerCrop, weeeflowers.pammagentaflowerCrop, weeeflowers.pamlightblueflowerCrop, weeeflowers.pamyellowflowerCrop,
-            weeeflowers.pamlimeflowerCrop, weeeflowers.pampinkflowerCrop, weeeflowers.pamlightgreyflowerCrop, weeeflowers.pamdarkgreyflowerCrop, weeeflowers.pamcyanflowerCrop,
-            weeeflowers.pampurpleflowerCrop, weeeflowers.pamblueflowerCrop, weeeflowers.pambrownflowerCrop, weeeflowers.pamgreenflowerCrop, weeeflowers.pamredflowerCrop, weeeflowers.pamblackflowerCrop
-            };
+    public static void loadWF() {
+        if (Loader.isModLoaded("weeeflowers")) {
+            PamFlowerCrops = new Block[] { weeeflowers.pamwhiteflowerCrop, weeeflowers.pamorangeflowerCrop,
+                    weeeflowers.pammagentaflowerCrop, weeeflowers.pamlightblueflowerCrop,
+                    weeeflowers.pamyellowflowerCrop, weeeflowers.pamlimeflowerCrop, weeeflowers.pampinkflowerCrop,
+                    weeeflowers.pamlightgreyflowerCrop, weeeflowers.pamdarkgreyflowerCrop,
+                    weeeflowers.pamcyanflowerCrop, weeeflowers.pampurpleflowerCrop, weeeflowers.pamblueflowerCrop,
+                    weeeflowers.pambrownflowerCrop, weeeflowers.pamgreenflowerCrop, weeeflowers.pamredflowerCrop,
+                    weeeflowers.pamblackflowerCrop };
 
-            PamFlowerSeeds = new Item[]{
-            weeeflowers.whiteflowerseedItem, weeeflowers.orangeflowerseedItem, weeeflowers.magentaflowerseedItem, weeeflowers.lightblueflowerseedItem, weeeflowers.yellowflowerseedItem,
-            weeeflowers.limeflowerseedItem, weeeflowers.pinkflowerseedItem, weeeflowers.lightgreyflowerseedItem, weeeflowers.darkgreyflowerseedItem, weeeflowers.cyanflowerseedItem,
-            weeeflowers.purpleflowerseedItem, weeeflowers.blueflowerseedItem, weeeflowers.brownflowerseedItem, weeeflowers.greenflowerseedItem, weeeflowers.redflowerseedItem, weeeflowers.blackflowerseedItem
-            };
+            PamFlowerSeeds = new Item[] { weeeflowers.whiteflowerseedItem, weeeflowers.orangeflowerseedItem,
+                    weeeflowers.magentaflowerseedItem, weeeflowers.lightblueflowerseedItem,
+                    weeeflowers.yellowflowerseedItem, weeeflowers.limeflowerseedItem, weeeflowers.pinkflowerseedItem,
+                    weeeflowers.lightgreyflowerseedItem, weeeflowers.darkgreyflowerseedItem,
+                    weeeflowers.cyanflowerseedItem, weeeflowers.purpleflowerseedItem, weeeflowers.blueflowerseedItem,
+                    weeeflowers.brownflowerseedItem, weeeflowers.greenflowerseedItem, weeeflowers.redflowerseedItem,
+                    weeeflowers.blackflowerseedItem };
         }
     }
 
-    public static void mapFruit(Block blockSapling, Item fruitItem, Block fruitBlock)
-    {
+    public static void mapFruit(Block blockSapling, Item fruitItem, Block fruitBlock) {
         fruitItemToBlockMap.put(fruitItem, fruitBlock);
         saplingToFruitBlockMap.put(blockSapling, fruitBlock);
     }
 
     // mimics the logic in ItemPamSeedFood.onItemUse
-    public static boolean canPlantSeedFoodAt(EntityPlayer player, ItemStack itemStack, World world, int x, int y, int z, int side)
-    {
+    public static boolean canPlantSeedFoodAt(EntityPlayer player, ItemStack itemStack, World world, int x, int y, int z,
+            int side) {
         if (!player.canPlayerEdit(x, y, z, side, itemStack) || !player.canPlayerEdit(x, y + 1, z, side, itemStack))
             return false;
 
-        try
-        {
+        try {
             Block requiredSoil = (Block) itemPamSeedFoodSoilBlock.get(itemStack.getItem());
             Block soilBlock = world.getBlock(x, y, z);
             Block aboveBlock = world.getBlock(x, y + 1, z);
-            if (soilBlock == requiredSoil && aboveBlock.isAir(world, x, y + 1, z))
-            {
+            if (soilBlock == requiredSoil && aboveBlock.isAir(world, x, y + 1, z)) {
                 return true;
-            }
-            else if (itemStack.getItem() == ItemRegistry.cranberryItem || itemStack.getItem() == ItemRegistry.riceItem || itemStack.getItem() == ItemRegistry.seaweedItem)
-            {
-                return aboveBlock.getMaterial() == Material.water && world.getBlockMetadata(x, y + 1, z) == 0;
-            }
-        }
-        catch (Exception e)
-        {
+            } else if (itemStack.getItem() == ItemRegistry.cranberryItem || itemStack.getItem() == ItemRegistry.riceItem
+                    || itemStack.getItem() == ItemRegistry.seaweedItem) {
+                        return aboveBlock.getMaterial() == Material.water && world.getBlockMetadata(x, y + 1, z) == 0;
+                    }
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;

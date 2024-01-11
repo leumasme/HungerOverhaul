@@ -1,11 +1,11 @@
 // Add your dependencies here
 
 dependencies {
-    compile('com.github.GTNewHorizons:AppleCore:3.1.9:dev')
+    compile('com.github.GTNewHorizons:AppleCore:3.2.12:dev')
 
-    compileOnly('com.github.GTNewHorizons:Natura:2.4.9:dev')
-    compileOnly('com.github.GTNewHorizons:TinkersConstruct:1.9.0.13-GTNH:dev')
-    compileOnly('com.github.GTNewHorizons:harvestcraft:1.0.12-GTNH:dev')
+    compileOnly('com.github.GTNewHorizons:Natura:2.5.7:dev')
+    compileOnly('com.github.GTNewHorizons:TinkersConstruct:1.11.5-GTNH:dev')
+    compileOnly('com.github.GTNewHorizons:harvestcraft:1.1.4-GTNH:dev')
 
     compileOnly('thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev')
     compileOnly('curse.maven:biomes-o-plenty-220318:2308122')

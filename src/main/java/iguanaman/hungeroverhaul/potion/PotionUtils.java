@@ -15,21 +15,24 @@ public class PotionUtils {
         HungerOverhaul.Log.info("Extending potions array by " + newSlots);
         Potion[] potionTypes = new Potion[Potion.potionTypes.length + newSlots];
         System.arraycopy(Potion.potionTypes, 0, potionTypes, 0, Potion.potionTypes.length);
-        Field potionArray = ReflectionHelper.findField(Potion.class, ObfuscationReflectionHelper.remapFieldNames(Potion.class.getName(), "potionArray", "field_76425_a", "a"));
+        Field potionArray = ReflectionHelper.findField(
+                Potion.class,
+                ObfuscationReflectionHelper
+                        .remapFieldNames(Potion.class.getName(), "potionArray", "field_76425_a", "a"));
         try {
             Field modifiers = Field.class.getDeclaredField("modifiers");
             modifiers.setAccessible(true);
             modifiers.setInt(potionArray, potionArray.getModifiers() & ~Modifier.FINAL);
             potionArray.set(null, potionTypes);
-        } catch(Exception e) {
+        } catch (Exception e) {
             HungerOverhaul.Log.error("There was an error in extending the potions array", e);
         }
     }
 
     public static int getNextPotionID() {
-        int firstOpen = 24; //The first open index in vanilla
-        for(int i = firstOpen; i < Potion.potionTypes.length; i++) {
-            if(Potion.potionTypes[i] == null) {
+        int firstOpen = 24; // The first open index in vanilla
+        for (int i = firstOpen; i < Potion.potionTypes.length; i++) {
+            if (Potion.potionTypes[i] == null) {
                 return i;
             }
         }

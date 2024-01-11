@@ -1,30 +1,36 @@
 package iguanaman.hungeroverhaul.module;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import iguanaman.hungeroverhaul.config.IguanaConfig;
-import iguanaman.hungeroverhaul.food.FoodModifier;
-import iguanaman.hungeroverhaul.util.BonemealModification;
-import iguanaman.hungeroverhaul.util.PlantGrowthModification;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockCactus;
+import net.minecraft.block.BlockCocoa;
+import net.minecraft.block.BlockCrops;
+import net.minecraft.block.BlockNetherWart;
+import net.minecraft.block.BlockReed;
+import net.minecraft.block.BlockSapling;
+import net.minecraft.block.BlockStem;
 import net.minecraft.init.Items;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import iguanaman.hungeroverhaul.config.IguanaConfig;
+import iguanaman.hungeroverhaul.food.FoodModifier;
+import iguanaman.hungeroverhaul.util.BonemealModification;
+import iguanaman.hungeroverhaul.util.PlantGrowthModification;
 import squeek.applecore.api.food.FoodValues;
 
-public class ModuleVanilla
-{
-    public static void init()
-    {
+public class ModuleVanilla {
+
+    public static void init() {
         if (IguanaConfig.addSeedsCraftingRecipe)
             GameRegistry.addRecipe(new ShapelessOreRecipe(Items.wheat_seeds, Items.wheat));
 
         /*
          * Food values
          */
-        if (IguanaConfig.modifyFoodValues && IguanaConfig.useHOFoodValues)
-        {
+        if (IguanaConfig.modifyFoodValues && IguanaConfig.useHOFoodValues) {
             FoodModifier.setModifiedFoodValues(Items.apple, new FoodValues(1, 0.05F));
             FoodModifier.setModifiedFoodValues(Items.bread, new FoodValues(3, 0.2F));
             FoodModifier.setModifiedFoodValues(Items.porkchop, new FoodValues(1, 0.05F));
@@ -49,46 +55,35 @@ public class ModuleVanilla
         /*
          * Plant growth
          */
-        PlantGrowthModification cropGrowthModification = new PlantGrowthModification()
-                .setNeedsSunlight(true)
-                .setGrowthTickProbability(IguanaConfig.cropRegrowthMultiplier)
-                .setBiomeGrowthModifier(Type.FOREST, 1)
+        PlantGrowthModification cropGrowthModification = new PlantGrowthModification().setNeedsSunlight(true)
+                .setGrowthTickProbability(IguanaConfig.cropRegrowthMultiplier).setBiomeGrowthModifier(Type.FOREST, 1)
                 .setBiomeGrowthModifier(Type.PLAINS, 1);
         ModulePlantGrowth.registerPlantGrowthModifier(BlockCrops.class, cropGrowthModification);
 
-        PlantGrowthModification reedGrowthModification = new PlantGrowthModification()
-                .setNeedsSunlight(true)
+        PlantGrowthModification reedGrowthModification = new PlantGrowthModification().setNeedsSunlight(true)
                 .setGrowthTickProbability(IguanaConfig.sugarcaneRegrowthMultiplier)
-                .setBiomeGrowthModifier(Type.JUNGLE, 1)
-                .setBiomeGrowthModifier(Type.SWAMP, 1)
+                .setBiomeGrowthModifier(Type.JUNGLE, 1).setBiomeGrowthModifier(Type.SWAMP, 1)
                 .setWrongBiomeMultiplier(IguanaConfig.wrongBiomeRegrowthMultiplierSugarcane);
         ModulePlantGrowth.registerPlantGrowthModifier(BlockReed.class, reedGrowthModification);
 
-        PlantGrowthModification stemGrowthModification = new PlantGrowthModification()
-                .setNeedsSunlight(true)
-                .setGrowthTickProbability(IguanaConfig.cropRegrowthMultiplier)
-                .setBiomeGrowthModifier(Type.JUNGLE, 1)
+        PlantGrowthModification stemGrowthModification = new PlantGrowthModification().setNeedsSunlight(true)
+                .setGrowthTickProbability(IguanaConfig.cropRegrowthMultiplier).setBiomeGrowthModifier(Type.JUNGLE, 1)
                 .setBiomeGrowthModifier(Type.SWAMP, 1);
         ModulePlantGrowth.registerPlantGrowthModifier(BlockStem.class, stemGrowthModification);
 
-        PlantGrowthModification cocoaGrowthModification = new PlantGrowthModification()
-                .setNeedsSunlight(false)
-                .setGrowthTickProbability(IguanaConfig.cocoaRegrowthMultiplier)
-                .setBiomeGrowthModifier(Type.JUNGLE, 1);
+        PlantGrowthModification cocoaGrowthModification = new PlantGrowthModification().setNeedsSunlight(false)
+                .setGrowthTickProbability(IguanaConfig.cocoaRegrowthMultiplier).setBiomeGrowthModifier(Type.JUNGLE, 1);
         ModulePlantGrowth.registerPlantGrowthModifier(BlockCocoa.class, cocoaGrowthModification);
 
-        PlantGrowthModification cactusGrowthModification = new PlantGrowthModification()
-                .setNeedsSunlight(false)
-                .setGrowthTickProbability(IguanaConfig.cactusRegrowthMultiplier)
-                .setBiomeGrowthModifier(Type.SANDY, 1);
+        PlantGrowthModification cactusGrowthModification = new PlantGrowthModification().setNeedsSunlight(false)
+                .setGrowthTickProbability(IguanaConfig.cactusRegrowthMultiplier).setBiomeGrowthModifier(Type.SANDY, 1);
         ModulePlantGrowth.registerPlantGrowthModifier(BlockCactus.class, cactusGrowthModification);
 
         PlantGrowthModification saplingGrowthModification = new PlantGrowthModification()
                 .setGrowthTickProbability(IguanaConfig.saplingRegrowthMultiplier);
         ModulePlantGrowth.registerPlantGrowthModifier(BlockSapling.class, saplingGrowthModification);
 
-        PlantGrowthModification netherWartGrowthModification = new PlantGrowthModification()
-                .setNeedsSunlight(false)
+        PlantGrowthModification netherWartGrowthModification = new PlantGrowthModification().setNeedsSunlight(false)
                 .setGrowthTickProbability(IguanaConfig.netherWartRegrowthMultiplier)
                 .setBiomeGrowthModifier(Type.NETHER, 1);
         ModulePlantGrowth.registerPlantGrowthModifier(BlockNetherWart.class, netherWartGrowthModification);
@@ -96,13 +91,13 @@ public class ModuleVanilla
         /*
          * Bonemeal
          */
-        BonemealModification cropBonemealModification = new BonemealModification()
-        {
+        BonemealModification cropBonemealModification = new BonemealModification() {
+
             @Override
-            public int getNewMeta(World world, int x, int y, int z, Block block, int currentMeta)
-            {
+            public int getNewMeta(World world, int x, int y, int z, Block block, int currentMeta) {
                 int metaIncrease = 1;
-                if (IguanaConfig.difficultyScalingBoneMeal && world.difficultySetting.getDifficultyId() < EnumDifficulty.EASY.getDifficultyId())
+                if (IguanaConfig.difficultyScalingBoneMeal
+                        && world.difficultySetting.getDifficultyId() < EnumDifficulty.EASY.getDifficultyId())
                     metaIncrease = world.rand.nextInt(3);
                 return Math.min(currentMeta + metaIncrease, 7);
             }

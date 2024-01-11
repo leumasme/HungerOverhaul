@@ -2,12 +2,11 @@ package iguanaman.hungeroverhaul.util;
 
 import java.util.Random;
 
-public class RandomHelper
-{
+public class RandomHelper {
+
     public static final Random random = new Random();
 
-    public static int getRandomIntFromRange(int min, int max)
-    {
+    public static int getRandomIntFromRange(int min, int max) {
         return min + (max > min ? random.nextInt(1 + max - min) : 0);
     }
 
@@ -18,8 +17,7 @@ public class RandomHelper
      * 
      * @return float with bounds {@code 0f} (inclusive) and {@code bound} (exclusive)
      */
-    public static float nextFloat(Random random, float bound)
-    {
+    public static float nextFloat(Random random, float bound) {
         return random.nextFloat() * bound;
     }
 }
