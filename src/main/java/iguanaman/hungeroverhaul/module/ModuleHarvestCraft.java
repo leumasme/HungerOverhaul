@@ -256,8 +256,13 @@ public class ModuleHarvestCraft {
             FoodModifier.setModifiedFoodValues(ItemRegistry.avocadoburritoItem, new FoodValues(7, 0.4F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.poachedpearItem, new FoodValues(4, 0.2F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.fruitcrumbleItem, new FoodValues(6, 0.35F));
+            FoodModifier.setModifiedFoodValues(ItemRegistry.pearjuiceItem, fruitJuiceFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.pearsmoothieItem, smoothieFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.pearyogurtItem, yogurtFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.plumjuiceItem, fruitJuiceFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.plumyogurtItem, yogurtFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.plumsmoothieItem, smoothieFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.bananajuiceItem, fruitJuiceFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.bananasplitItem, new FoodValues(7, 0.35F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.banananutbreadItem, new FoodValues(5, 0.3F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.bananasmoothieItem, smoothieFoodValues);
@@ -265,6 +270,7 @@ public class ModuleHarvestCraft {
             FoodModifier.setModifiedFoodValues(ItemRegistry.coconutmilkItem, new FoodValues(2, 0.05F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.chickencurryItem, new FoodValues(9, 0.5F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.coconutshrimpItem, new FoodValues(6, 0.3F));
+            FoodModifier.setModifiedFoodValues(ItemRegistry.coconutsmoothieItem, smoothieFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.coconutyogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.orangejuiceItem, fruitJuiceFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.orangechickenItem, new FoodValues(6, 0.3F));
@@ -284,6 +290,9 @@ public class ModuleHarvestCraft {
             FoodModifier.setModifiedFoodValues(ItemRegistry.pomegranatejuiceItem, fruitJuiceFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.pomegranatesmoothieItem, smoothieFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.pomegranateyogurtItem, yogurtFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.gooseberryjuiceItem, fruitJuiceFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.gooseberrysmoothieItem, smoothieFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.gooseberryyogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.vanillayogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.cinnamonrollItem, new FoodValues(5, 0.3F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.frenchtoastItem, new FoodValues(7, 0.4F));
@@ -309,6 +318,7 @@ public class ModuleHarvestCraft {
             FoodModifier.setModifiedFoodValues(ItemRegistry.lemonyogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.cherryyogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.strawberryyogurtItem, yogurtFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.grapesmoothieItem, smoothieFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.grapeyogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.chocolateyogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.blackberryjuiceItem, fruitJuiceFoodValues);
@@ -327,11 +337,14 @@ public class ModuleHarvestCraft {
             FoodModifier.setModifiedFoodValues(ItemRegistry.kiwismoothieItem, smoothieFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.kiwiyogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.plainyogurtItem, yogurtFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.applesmoothieItem, smoothieFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.appleyogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.saltedsunflowerseedsItem, new FoodValues(1, 0.05F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.sunflowerwheatrollsItem, new FoodValues(6, 0.3F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.sunflowerbroccolisaladItem, new FoodValues(5, 0.25F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.cranberryjuiceItem, fruitJuiceFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.cranberrysmoothieItem, smoothieFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.cranberryyogurtItem, yogurtFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.cranberrysauceItem, new FoodValues(2, 0.05F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.cranberrybarItem, new FoodValues(5, 0.3F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.peppermintItem, new FoodValues(2, 0.05F));
@@ -386,6 +399,12 @@ public class ModuleHarvestCraft {
             FoodModifier.setModifiedFoodValues(ItemRegistry.strawberryjellysandwichItem, jellySandwichFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.watermelonjellyItem, jellyFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.watermelonjellysandwichItem, jellySandwichFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.plumjellyItem, jellyFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.plumjellysandwichItem, jellySandwichFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.pearjellyItem, jellyFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.pearjellysandwichItem, jellySandwichFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.gooseberryjellyItem, jellyFoodValues);
+            FoodModifier.setModifiedFoodValues(ItemRegistry.gooseberryjellysandwichItem, jellySandwichFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.cherrysodaItem, fruitJuiceFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.colasodaItem, fruitJuiceFoodValues);
             FoodModifier.setModifiedFoodValues(ItemRegistry.gingersodaItem, fruitJuiceFoodValues);
@@ -407,8 +426,6 @@ public class ModuleHarvestCraft {
             FoodModifier.setModifiedFoodValues(ItemRegistry.honeylemonlambItem, new FoodValues(4, 0.2F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.pumpkinoatsconesItem, new FoodValues(3, 0.15F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.beefjerkyItem, new FoodValues(3, 0.2F));
-            FoodModifier.setModifiedFoodValues(ItemRegistry.plumjuiceItem, new FoodValues(2, 0.15F));
-            FoodModifier.setModifiedFoodValues(ItemRegistry.pearjuiceItem, new FoodValues(2, 0.15F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.ovenroastedcauliflowerItem, new FoodValues(5, 0.25F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.leekbaconsoupItem, new FoodValues(6, 0.25F));
             FoodModifier.setModifiedFoodValues(ItemRegistry.herbbutterparsnipsItem, new FoodValues(4, 0.2F));
